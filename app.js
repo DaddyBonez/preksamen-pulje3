@@ -4,10 +4,9 @@ const fiende = document.querySelector('.fiende');
 const moveBy = 10;
 
 
-let t = setInterval(move, 3);
+let t = setInterval(move, 0);
 let pos = 1;
 let test = true;
-
 
 ///////////////Box bevegelse///////////////
 
@@ -38,6 +37,7 @@ function move() {
     fiende.style.left = pos + 'px';
     fiende.style.top = pos + 'px';
 
+
     if (test)
         pos++;
     else
@@ -46,5 +46,12 @@ function move() {
         test = false;
     else if (pos <= 0)
         test = true;
+
+
+    if (t) {
+        pos++;
+    } else {
+
+    }
 };
 
