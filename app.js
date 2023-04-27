@@ -1,10 +1,15 @@
 const box = document.querySelector('.box'); 
 const border = document.querySelector('.border');
-const fiende = document.querySelector('.fiende') ;
+const fiende = document.querySelector('.fiende');
 const moveBy = 10;
-let t = setInterval(move, 1);
+
+
+let t = setInterval(move, 3);
 let pos = 1;
 let test = true;
+
+
+///////////////Box bevegelse///////////////
 
 box.style.left = 0;
 box.style.top = 0;
@@ -27,6 +32,8 @@ window.addEventListener('keydown', (e) =>{
     }
 });
 
+/////////fiende bevegelse///////////
+
 function move() {
     fiende.style.left = pos + 'px';
     fiende.style.top = pos + 'px';
@@ -35,9 +42,9 @@ function move() {
         pos++;
     else
         test = true;
-
-    if (pos >= 150)
+    if (pos >= 860)
         test = false;
     else if (pos <= 0)
         test = true;
 };
+
