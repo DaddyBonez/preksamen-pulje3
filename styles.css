@@ -12,7 +12,9 @@
     width: 100px;
     background-color: red;
     position: absolute;
-    animation: diagonal-move-anim 3s linear infinite alternate;
+    top: 0;
+    left: 0;
+    transform-origin: center center;
 }
 
 .border{
@@ -22,4 +24,9 @@
     position: relative;
 }
 
-
+#container{
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    background-color: gold;
+}
