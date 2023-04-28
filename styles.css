@@ -12,6 +12,7 @@
     width: 100px;
     background-color: red;
     position: absolute;
+    animation: diagonal-move-anim 3s linear infinite alternate;
 }
 
 .border{
@@ -20,3 +21,5 @@
     background-color: blanchedalmond;
     position: relative;
 }
+
+

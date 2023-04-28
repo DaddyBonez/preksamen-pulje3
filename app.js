@@ -4,7 +4,7 @@ const fiende = document.querySelector('.fiende');
 const moveBy = 10;
 
 
-let t = setInterval(move, 0);
+let t = setInterval(move, 1);
 let pos = 1;
 let test = true;
 
@@ -26,12 +26,9 @@ window.addEventListener('keydown', (e) =>{
     console.log() 
     switch(e.key) { 
         case 65: //'ArrowLeft' :
-
             if (currentleft > boxwidth/2) {
                 box.style.left = currentleft - 10 + 'px';
             }
-            break;
-
             // box.style.left = parseInt(box.style.left) - moveBy + 'px' 
             // break; 
 
@@ -47,33 +44,54 @@ window.addEventListener('keydown', (e) =>{
             if (currenttop > boxheigth/2) {
                 box.style.top = currenttop - 10 + 'px';
             }
-            break;
             // box.style.top = parseInt(box.style.top) - moveBy + 'px'
             // break;
+
         case 'ArrowDown' :
             if (currenttop + boxheigth/2 < windowheight) {
                 box.style.top = currenttop + 10 + 'px';
             }
-            break;
             // box.style.top = parseInt(box.style.top) + moveBy + 'px'
             // break;
+            
     }
 });
 
 /////////fiende bevegelse///////////
 
+const container = document.getElementById('container');
+
 function move() {
-    fiende.style.left = pos + 'px';
-    fiende.style.top = pos + 'px';
+  fiende.style.left = pos + 'px';
+  fiende.style.top = pos + 'px';
+  
+  if (test)
+    pos++; /* move down */
+  else
+    pos--; /* move up */
+    
+  /* update the direction when you reach the top or bottom limit*/  
+  if (pos >= innerHeight) 
+    test = false 
+  else if (pos <= 0) 
+    test = true;
+}
 
 
-    if (test)
-        pos++;
-    else
-        test = true;
-    if (pos >= 860)
-        test = false;
-    else if (pos <= 0)
-        test = true;
-};
+
+
+// function move() {
+//     fiende.style.left = pos + 'px';
+//     fiende.style.top = pos + 'px';
+
+
+//     if (test)
+//         pos++;
+//     else
+//         test = true;
+//     if (pos >= 860)
+//         test = false;
+//     else if (pos <= 0)
+//         test = true;
+// };
 
